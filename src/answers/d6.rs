@@ -1,4 +1,4 @@
-use std::{cmp::Ordering, collections::{HashMap, HashSet}};
+use std::collections::{HashMap, HashSet};
 
 pub fn d6_1(input: String) { 
     let mut map: Vec<Vec<char>> = input

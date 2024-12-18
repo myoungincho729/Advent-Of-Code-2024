@@ -32,7 +32,6 @@ pub fn d2_2(input: String) {
             .map(|n| n.parse::<i32>().unwrap())
             .collect::<Vec<i32>>();
 
-        let mut flag_total = true;
         for j in 0..v.len() {
             let removed_index = j;
             let removed = v.remove(removed_index);

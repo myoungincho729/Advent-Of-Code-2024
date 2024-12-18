@@ -12,7 +12,7 @@ pub fn d5_1(input: String) {
             match graph.get_mut(&nums[0]) {
                 Some(v) => v.push(nums[1]),
                 None => {
-                    let mut v = vec![nums[1]];
+                    let v = vec![nums[1]];
                     graph.insert(nums[0], v);
                 }
             }
