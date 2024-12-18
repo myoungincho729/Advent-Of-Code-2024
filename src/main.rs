@@ -34,8 +34,8 @@ fn main() {
         "6-2" => d6::d6_2(input),
         "7-1" => d7::d7_1(input),
         "7-2" => d7::d7_2(input),
-        // "8-1" => d1::d1_1(input),
-        // "8-1" => d1::d1_1(input),
+        "8-1" => d8::d8_1(input),
+        "8-2" => d8::d8_2(input),
         _ => println!("Unknown command: {}", args[1]),
     }
 }
