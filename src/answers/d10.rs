@@ -52,5 +52,49 @@ fn dfs(i: usize, j: usize, v: &Vec<Vec<u8>>, vis: &mut HashSet<(usize, usize)>, 
     }
 }
 pub fn d10_2(input: String) {
-    
+    let v: Vec<Vec<u8>> = input
+        .lines()
+        .map(|line| 
+            line
+                .chars()
+                .map(|c| c.to_digit(10).unwrap() as u8)
+                .collect()
+        ).collect();
+    let r = v.len();
+    let c = v[0].len();
+    let mut sum = 0;
+    let mut vis = vec![vec![0; c]; r];
+
+
+    for i in 0..r {
+        for j in 0..c {
+            if v[i][j] == 0 {
+                vis[i][j] = 1;
+            }
+        }
+    }
+    for n in 1..10 {
+        for i in 0..r {
+            for j in 0..c {
+                if v[i][j] == n {
+                    if i > 0 && v[i-1][j] == n-1 {
+                        vis[i][j] += vis[i-1][j];
+                    }
+                    if i < r-1 && v[i+1][j] == n-1 {
+                        vis[i][j] += vis[i+1][j];
+                    }
+                    if j > 0 && v[i][j-1] == n-1 {
+                        vis[i][j] += vis[i][j-1];
+                    }
+                    if j < c-1 && v[i][j+1] == n-1 {
+                        vis[i][j] += vis[i][j+1];
+                    }
+                }
+                if v[i][j] == 9 {
+                    sum += vis[i][j];
+                }
+            }
+        }
+    }
+    println!("{sum}");
 }
