@@ -60,7 +60,6 @@ pub fn d9_2(input: String) {
     }
     // println!("{:?}", v);
     id -= 1;
-    let mut start = 0;
     let mut end = v.len() - 1;
     loop {
         if id == 0 {
@@ -69,7 +68,7 @@ pub fn d9_2(input: String) {
         while end > 0 && v[end].0 != id {
             end -= 1;
         }
-        start = 0;
+        let mut start = 0;
         while start < v.len() && (v[start].0 != -1 || v[start].1 < v[end].1) {
             start += 1;
         }
