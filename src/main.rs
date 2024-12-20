@@ -48,6 +48,8 @@ fn main() {
         "13-2" => d13::d13_2(input),
         "14-1" => d14::d14_1(input),
         "14-2" => d14::d14_2(input),
+        "15-1" => d15::d15_1(input),
+        "15-2" => d15::d15_2(input),
         _ => println!("Unknown command: {}", args[1]),
     }
 }
